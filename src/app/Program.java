@@ -1,3 +1,5 @@
+package app;
+
 import entities.Financing;
 
 public class Program {
