@@ -10,8 +10,24 @@ public class FinancingTests {
     public void constructorShouldCreateObjectWhenValidData(){
         Financing f = new Financing(100000.00,2000.00,80);
 
-        Assertions.assertEquals(100000.00, f.entry());
+        Assertions.assertEquals(100000.00, f.getTotalAmount());
         Assertions.assertEquals(2000.00, f.getIncome());
         Assertions.assertEquals(80, f.getMonths());
+    }
+    @Test
+    public void constructorShouldThrowIllegalArgumentExceptionWhenInvalidData(){
+
+        Assertions.assertThrows(IllegalArgumentException.class,()-> {
+            Financing f = new Financing(100000.00,2000.00,20);
+        });
+    }
+    @Test
+    public void setTotalAmountShouldUpdateValueWhenValidData(){
+        //arrange
+        Financing f = new Financing(100000.00,2000.00,80);
+        //actions
+        f.setTotalAmount(90000.00);
+        //assert
+        Assertions.assertEquals(90000.00, f.getTotalAmount());
     }
 }
