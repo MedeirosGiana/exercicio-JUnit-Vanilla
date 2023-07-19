@@ -65,4 +65,9 @@ public class FinancingTests {
             f.setMonths(70);
         });
     }
+    @Test
+    public void entryShouldCalculateEntryCorrectly(){
+        Financing f = new Financing(100000.00,2000.00,80);
+        Assertions.assertEquals(20000.00,f.entry());
+    }
 }
