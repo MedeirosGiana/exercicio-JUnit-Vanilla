@@ -57,4 +57,12 @@ public class FinancingTests {
         f.setMonths(85);
         Assertions.assertEquals(85,f.getMonths());
     }
+
+    @Test
+    public void setMonthsShouldThrowIllegalArgumentExceptionWhenInvalidData(){
+        Assertions.assertThrows(IllegalArgumentException.class,() -> {
+            Financing f = new Financing(100000.00,2000.00,80);
+            f.setMonths(70);
+        });
+    }
 }
