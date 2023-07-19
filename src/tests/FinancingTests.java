@@ -51,4 +51,10 @@ public class FinancingTests {
             f.setIncome(1900.00);
         });
     }
+    @Test
+    public void setMonthsShouldUpdateValueWhenValidData(){
+        Financing f = new Financing(100000.00,2000.00,80);
+        f.setMonths(85);
+        Assertions.assertEquals(85,f.getMonths());
+    }
 }
